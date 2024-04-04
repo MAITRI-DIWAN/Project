@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText usernameEditText, passwordEditText;
     private Button loginButton;
-    String url = "http://192.168.27.53/project/login.php";
+    String url = "http://192.168.83.71/student_assignment_portal/student_assignment_portal/android/login.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

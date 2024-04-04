@@ -31,7 +31,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private EditText usernameEditText, fullNameEditText, emailEditText, passwordEditText, semesterEditText, academicYearEditText;
     private Spinner departmentSpinner;
     private Button registerButton;
-    String url = "http://192.168.27.53/project/register.php";
+    String url = "http://192.168.83.71/student_assignment_portal/student_assignment_portal/android/register.php";
 
 
     @Override
