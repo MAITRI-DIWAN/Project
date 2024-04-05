@@ -3,10 +3,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+
     tools:context=".TextEditor">
 
+    <!-- Upper half - Code editor -->
+
+    <!-- Lower half - Input -->
+
     <!-- Line numbering -->
+
+    <EditText
+        android:id="@+id/code_editor"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_above="@+id/input"
+        android:layout_marginBottom="140dp"
+        android:layout_weight="1"
+
+        android:gravity="top|start"
+        android:hint="Enter your code here"
+        android:imeOptions="flagNoEnterAction"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        android:scrollbars="vertical"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:layout_marginBottom="395dp"
+
+        android:hint="INPUT"
+        android:padding="10dp"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
     <TextView
         android:id="@+id/line_numbers"
         android:layout_width="wrap_content"
@@ -14,39 +57,39 @@
         android:textColor="#ffffff"
         android:textSize="14sp"
         android:gravity="end"
-        android:paddingEnd="5dp"
         android:paddingStart="5dp"
+        android:paddingEnd="5dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:layout_alignTop="@+id/code_editor"
         android:layout_alignBottom="@+id/code_editor"/>
 
-    <!-- Code editor -->
-    <!-- Code editor -->
-    <EditText
-        android:id="@+id/code_editor"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_toRightOf="@+id/line_numbers"
-        android:gravity="top|start"
-        android:inputType="textMultiLine"
-        android:scrollbars="vertical"
-        android:layout_above="@+id/save_button"
-        android:layout_marginBottom="10dp"
-        android:padding="10dp"
-        android:textColor="#ffffff"
-        android:background="#000000"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:textSize="14sp"
-        android:imeOptions="flagNoEnterAction"
-        android:hint="Enter your code here"/>
-
-
+    <!-- Symbol palette -->
 
     <!-- Save button -->
+    <LinearLayout
+        android:id="@+id/symbols_palette"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/input"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="640dp"
+        android:orientation="horizontal"
+        android:weightSum="7">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#000000"
+            android:onClick="insertSymbol"
+            android:text="["
+            android:textColor="#FFFFFF" />
+
+        <!-- Add other symbol buttons here -->
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/save_button"
         android:layout_width="wrap_content"
@@ -72,84 +115,5 @@
         android:backgroundTint="#FFFFFF"
         android:textColor="#000000"
         android:onClick="runCode"/>
-
-    <!-- Symbol palette -->
-
-    <LinearLayout
-        android:id="@+id/symbols_palette"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_above="@id/save_button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:weightSum="7">
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="["
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#000000"
-            android:onClick="insertSymbol"/>
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="]"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#000000"
-            android:onClick="insertSymbol"/>
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="("
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#000000"
-            android:onClick="insertSymbol"/>
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text=")"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#000000"
-            android:onClick="insertSymbol"/>
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="{"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#000000"
-            android:onClick="insertSymbol"/>
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="}"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#000000"
-            android:onClick="insertSymbol"/>
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text=";"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#000000"
-            android:onClick="insertSymbol"/>
-
-
-
-    </LinearLayout>
-    <!-- Your existing symbol palette layout -->
 
 </RelativeLayout>

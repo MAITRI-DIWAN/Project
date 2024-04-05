@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                     if (success) {
                                         // Login successful, move to the next activity
-                                        Intent intent = new Intent(LoginActivity.this, Home.class);
+                                        Intent intent = new Intent(LoginActivity.this, TextEditor.class);
                                         startActivity(intent);
                                     } else {
                                         // Handle the case where success is false
