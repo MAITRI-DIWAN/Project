@@ -18,9 +18,7 @@
         <activity
             android:name=".SecondActivity"
             android:exported="false" />
-        <activity
-            android:name=".SecondAvtivity"
-            android:exported="false" />
+
         <activity
             android:name=".TextEditor"
             android:exported="false" />
