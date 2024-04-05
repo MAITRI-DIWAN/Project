@@ -16,6 +16,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".SecondActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SecondAvtivity"
+            android:exported="false" />
+        <activity
+            android:name=".TextEditor"
+            android:exported="false" />
+        <activity
             android:name=".Home"
             android:exported="false" />
         <activity
