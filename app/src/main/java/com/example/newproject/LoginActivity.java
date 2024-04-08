@@ -1,6 +1,7 @@
 package com.example.newproject;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -56,18 +57,34 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onResponse(String response) {
                                 // Response from the server
+
                                 Log.d("Response", response);
 
                                 try {
                                     JSONObject jsonResponse = new JSONObject(response);
+
                                     boolean success = jsonResponse.getBoolean("success");
                                     Log.d("Response", "Success: " + success);
 
+
                                     if (success) {
                                         // Login successful, move to the next activity
-                                        Intent intent = new Intent(LoginActivity.this, TextEditor.class);
+//                                        Intent intent = new Intent(LoginActivity.this, TextEditor.class);
+                                        Log.d("another", "Success: ");
+                                        int userId = jsonResponse.getInt("id"); // Assuming the key is "user_id"
+                                        // Store the user ID locally (e.g., in SharedPreferences)
+                                        Log.d("next1","done");
+                                        saveUserId(userId);
+
+                                        Intent intent = new Intent(LoginActivity.this, FetchAssignment.class);
+
+                                        intent.putExtra("id", userId);
                                         startActivity(intent);
-                                    } else {
+
+
+                                    }
+
+                                    else {
                                         // Handle the case where success is false
                                         // For example, display an error message
                                         Toast.makeText(LoginActivity.this, "Login failed", Toast.LENGTH_SHORT).show();
@@ -116,5 +133,18 @@ public class LoginActivity extends AppCompatActivity {
     public void moveToRegistration(View view) {
         startActivity(new Intent(getApplicationContext(), RegistrationActivity.class));
         finish();
+    }
+    private void saveUserId(int userId) {
+
+        Log.d("saved","done");
+        // Use SharedPreferences to save the user ID
+        SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        Log.d("saved1","done");
+        SharedPreferences.Editor editor = preferences.edit();
+        Log.d("saved2","done");
+        editor.putInt("user_id", userId);
+        Log.d("saved3","done");
+        editor.apply();
+        Log.d("saved4","done");
     }
 }

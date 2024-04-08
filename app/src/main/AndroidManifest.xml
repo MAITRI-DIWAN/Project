@@ -16,15 +16,23 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".FetchQuestion"
+            android:exported="true"
+            android:label="@string/title_activity_fetch_question"
+            android:theme="@style/Theme.NewProject" />
+        <activity
+            android:name=".FetchAssignment"
+            android:exported="true"
+            android:label="@string/title_activity_fetch_assignment"
+            android:theme="@style/Theme.NewProject" />
+        <activity
             android:name=".OutputActivity"
             android:exported="false"
-            android:label="@string/title_activity_output" />
-<!--        <activity-->
-<!--            android:name=".SecondActivity"-->
-<!--            android:exported="false" />-->
-
+            android:label="@string/title_activity_output" /> <!-- <activity -->
+        <!-- android:name=".SecondActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
-            android:name=".TextEditor"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,11 +45,9 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-
-        </activity> <!-- Add RegistrationActivity and LoginActivity -->
+            android:exported="false" /> <!-- Add RegistrationActivity and LoginActivity -->
         <activity android:name=".RegistrationActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".TextEditor" />
     </application>
 
 </manifest>
