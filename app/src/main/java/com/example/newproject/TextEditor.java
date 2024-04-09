@@ -38,6 +38,7 @@ public class TextEditor extends AppCompatActivity {
     private EditText codeEditor;
     private TextView lineNumbers;
 
+
     String url="http://192.168.67.19/student_assignment_portal/student_assignment_portal/android/compile.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -175,23 +176,31 @@ public class TextEditor extends AppCompatActivity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu_main, menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        if (item.getItemId() == R.id.action_save) {
+//            saveTextToFile();
+//            return true;
+//        }
+//        if(item.getItemId() == R.id.action_run){
+//            showInputDialog();
+//return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
+
+    public void saveText(View view) {
+        saveTextToFile();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_save) {
-            saveTextToFile();
-            return true;
-        }
-        if(item.getItemId() == R.id.action_run){
-            showInputDialog();
-return true;
-        }
-        return super.onOptionsItemSelected(item);
+    public void runCode(View view) {
+        showInputDialog();
     }
 
     private void saveTextToFile() {
@@ -265,10 +274,5 @@ return true;
     }
 
     // Method to handle saving text
-    public void saveText(View view) {
-        // Implement logic to save the code
-        String code = codeEditor.getText().toString();
 
-        // You can save the code to a file or perform other operations here
-    }
 }
