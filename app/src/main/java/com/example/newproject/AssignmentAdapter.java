@@ -48,22 +48,28 @@ public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.Vi
             public void onClick(View v) {
                 // Handle item click
                 try {
-                    Log.d("ad", "done");
+
                     int assignmentId = assignment.getId();
-                    Log.d("ad1", "done");
-                    // Save assignment ID
+
+                    SharedPreferences preferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+                    int userId = preferences.getInt("user_id", -1);
+                    // -1 is the default value if user_id is not found
+
+                    // Save assignment ID and user ID
                     saveAssignmentId(assignmentId);
-                    Log.d("ad2", "done");
+                    saveUserId(userId);
+
+
                     // Start the FetchQuestion activity
                     Intent intent = new Intent(context, FetchQuestion.class);
-                    Log.d("ad3", "done");
-                    intent.putExtra("id", assignmentId);
-                    Log.d("ad4", "done");
+                    intent.putExtra("user_id", userId);
+                    intent.putExtra("assignment_id", assignmentId);
+
                     context.startActivity(intent);
-                    Log.d("ad5", "done");
+
                 } catch (Exception e) {
                     e.printStackTrace();
-                    Log.e("Adapter onClick", "Error: " + e.getMessage());
+
                 }
             }
         });
@@ -87,16 +93,22 @@ public class AssignmentAdapter extends RecyclerView.Adapter<AssignmentAdapter.Vi
         }
     }
     private void saveAssignmentId(int assignmentId) {
-        Log.d("kruti","done");
 
         SharedPreferences preferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        Log.d("kruti1","done");
+
         SharedPreferences.Editor editor = preferences.edit();
-        Log.d("kruti2","done");
+
         editor.putInt("assignment_id", assignmentId);
-        Log.d("kruti3","done");
+
         editor.apply();
-        Log.d("kruti4","done");
+
+    }
+
+    private void saveUserId(int userId) {
+        SharedPreferences preferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt("user_id", userId);
+        editor.apply();
     }
 
 }

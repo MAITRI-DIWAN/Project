@@ -37,8 +37,6 @@ public class FetchAssignment extends AppCompatActivity {
 
     private int student_id;
 
-
-
     private TextView textViewEmpty;
     private List<Assignment> assignmentList;
     private AssignmentAdapter adapter;
@@ -52,9 +50,9 @@ public class FetchAssignment extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        if (intent != null && intent.hasExtra("id")) {
+        if (intent != null && intent.hasExtra("user_id")) {
 
-            student_id = intent.getIntExtra("id", -1); // -1 is the default value if user_id is not found
+            student_id = intent.getIntExtra("user_id", -1); // -1 is the default value if user_id is not found
         }
 
 

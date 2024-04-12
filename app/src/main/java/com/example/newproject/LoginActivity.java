@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                         Intent intent = new Intent(LoginActivity.this, FetchAssignment.class);
 
-                                        intent.putExtra("id", userId);
+                                        intent.putExtra("user_id", userId);
                                         startActivity(intent);
 
 
@@ -136,15 +136,15 @@ public class LoginActivity extends AppCompatActivity {
     }
     private void saveUserId(int userId) {
 
-        Log.d("saved","done");
+
         // Use SharedPreferences to save the user ID
         SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
-        Log.d("saved1","done");
+
         SharedPreferences.Editor editor = preferences.edit();
-        Log.d("saved2","done");
+
         editor.putInt("user_id", userId);
-        Log.d("saved3","done");
+
         editor.apply();
-        Log.d("saved4","done");
+
     }
 }

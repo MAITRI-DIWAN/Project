@@ -35,7 +35,9 @@ public class FetchQuestion extends AppCompatActivity {
     private List<Question> questionList;
     private QuestionAdapter adapter;
 
-    private int assignment_id; // Assuming you will pass the assignment id from the previous activity
+    private int assignment_id;
+
+    private int user_id;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -48,10 +50,10 @@ public class FetchQuestion extends AppCompatActivity {
         // Assuming you receive the assignment id from the previous activity
         Intent intent = getIntent();
 
-        if (intent != null && intent.hasExtra("id")) {
+        if (intent != null && intent.hasExtra("assignment_id") && intent.hasExtra("user_id")) {
 
-            assignment_id = intent.getIntExtra("id", -1);
-
+            assignment_id = intent.getIntExtra("assignment_id", -1);
+user_id = intent.getIntExtra("user_id",-1);
         }
 
         recyclerView = findViewById(R.id.recyclerViewQuestions);
@@ -126,8 +128,6 @@ public class FetchQuestion extends AppCompatActivity {
                 new com.android.volley.Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-
-
 
                         try {
 
