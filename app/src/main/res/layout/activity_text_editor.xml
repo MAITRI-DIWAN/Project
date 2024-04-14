@@ -3,14 +3,15 @@
 
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-android:background="@color/black"
+    android:background="@color/black"
 
     tools:context=".TextEditor">
 
-<!--    background color added , -->
+    <!--    background color added , -->
 
     <!-- Upper half - Code editor -->
 
@@ -24,8 +25,9 @@ android:background="@color/black"
 
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentTop="true"
-        android:background="?attr/colorPrimary"
-       />
+        android:background="@color/lightBlue"
+        app:title="Editor"
+        app:titleTextColor="@color/black" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -36,54 +38,54 @@ android:background="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/code_editor"
-        android:layout_width="match_parent"
-        android:layout_height="555dp"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_weight="1"
-        android:gravity="top|start"
-        android:hint="Enter your code here"
-        android:imeOptions="flagNoEnterAction"
-        android:inputType="textMultiLine"
-        android:padding="10dp"
-        android:paddingStart="10dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="10dp"
-        android:paddingBottom="10dp"
-        android:scrollbars="vertical|horizontal"
-        android:textColor="#FFFFFF"
-        android:textColorHint="@color/white"
-        android:textSize="14sp" />
+            <EditText
+                android:id="@+id/code_editor"
+                android:layout_width="match_parent"
+                android:layout_height="555dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_weight="1"
+                android:gravity="top|start"
+                android:hint="Enter your code here"
+                android:imeOptions="flagNoEnterAction"
+                android:inputType="textMultiLine"
+                android:padding="10dp"
+                android:paddingStart="10dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="10dp"
+                android:scrollbars="vertical|horizontal"
+                android:textColor="#FFFFFF"
+                android:textColorHint="@color/white"
+                android:textSize="14sp" />
 
-    <TextView
-        android:id="@+id/line_numbers"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_alignTop="@+id/code_editor"
-        android:layout_alignBottom="@+id/code_editor"
-        android:gravity="end"
-        android:paddingStart="5dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="5dp"
-        android:paddingBottom="10dp"
-        android:textColor="@color/white"
-        android:textSize="14sp" />
+            <TextView
+                android:id="@+id/line_numbers"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignTop="@+id/code_editor"
+                android:layout_alignBottom="@+id/code_editor"
+                android:gravity="end"
+                android:paddingStart="5dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="5dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
 
 
 
-    <!-- Symbol palette -->
+            <!-- Symbol palette -->
         </RelativeLayout>
 
 
-    <!-- Save button -->
+        <!-- Save button -->
     </ScrollView>
     <LinearLayout
         android:id="@+id/symbols_palette"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-       android:layout_alignParentBottom="true"
+        android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:weightSum="2"
         android:paddingBottom="5dp"
@@ -95,16 +97,16 @@ android:background="@color/black"
             android:id="@+id/save_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Save"
-            android:backgroundTint="#FFFFFF"
-            android:textColor="#000000"
-            android:onClick="saveText"
-            android:layout_marginRight="100dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginRight="100dp"
+            android:layout_weight="1"
+            android:backgroundTint="#FFFFFF"
+            android:onClick="saveText"
+            android:text="Save"
 
 
-           />
+            android:textColor="#000000"
+            app:backgroundTint="@color/lightBlue" />
 
         <Button
             android:id="@+id/run_button"
@@ -116,7 +118,7 @@ android:background="@color/black"
             android:textColor="#000000"
             android:onClick="runCode"
             android:layout_marginRight="20dp"
-           />
+            />
 
 
     </LinearLayout>

@@ -7,11 +7,11 @@
         android:id="@+id/textViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Questions"
-        android:textSize="24sp"
+        android:background="@color/black"
         android:padding="16dp"
-        android:background="@color/colorPrimary"
-        android:textColor="@android:color/white"/>
+        android:text="Questions"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewQuestions"

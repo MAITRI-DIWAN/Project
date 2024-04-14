@@ -131,7 +131,7 @@ public class FetchAssignment extends AppCompatActivity {
 
         progressBar.setVisibility(View.VISIBLE);
 
-        String url = "http://192.168.67.19/student_assignment_portal/student_assignment_portal/android/assignment.php?student_id=" + student_id;
+        String url = "http://192.168.43.37/student_assignment_portal/student_assignment_portal/android/assignment.php?student_id=" + student_id;
 
         RequestQueue requestQueue = com.android.volley.toolbox.Volley.newRequestQueue(FetchAssignment.this);
 

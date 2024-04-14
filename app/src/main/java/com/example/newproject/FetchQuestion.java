@@ -122,7 +122,7 @@ user_id = intent.getIntExtra("user_id",-1);
 
         RequestQueue requestQueue = com.android.volley.toolbox.Volley.newRequestQueue(FetchQuestion.this);
 
-        String url = "http://192.168.67.19/student_assignment_portal/student_assignment_portal/android/question.php?assignment_id=" + assignment_id;
+        String url = "http://192.168.43.37/student_assignment_portal/student_assignment_portal/android/question.php?assignment_id=" + assignment_id;
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new com.android.volley.Response.Listener<String>() {

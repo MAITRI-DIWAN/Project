@@ -46,8 +46,8 @@ public class TextEditor extends AppCompatActivity {
 
 
 
-    String url="http://192.168.67.19/student_assignment_portal/student_assignment_portal/android/compile.php";
-    String url1 = "http://192.168.67.19/student_assignment_portal/student_assignment_portal/android/dataentry.php";
+    String url="http://192.168.43.37/student_assignment_portal/student_assignment_portal/android/compile.php";
+    String url1 = "http://192.168.43.37/student_assignment_portal/student_assignment_portal/android/dataentry.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
